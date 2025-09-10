@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Telemedicine Platform Design System - Medical & Professional Theme */
+
+@layer base {
+  :root {
+    /* Core medical palette */
+    --background: 0 0% 100%;
+    --foreground: 215 25% 27%;
+    
+    /* Medical blue primary */
+    --primary: 210 88% 45%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 88% 55%;
+    --primary-dark: 210 88% 35%;
+    
+    /* Healthcare green accent */
+    --secondary: 142 69% 58%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 69% 68%;
+    
+    /* Professional grays */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 94%;
+    --accent-foreground: 215 25% 27%;
+    
+    /* Cards and surfaces */
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+    
+    /* Interactive elements */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 210 88% 45%;
+    
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+    --warning: 45 93% 47%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Design tokens */
+    --radius: 0.75rem;
+    
+    /* Medical gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-light)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--secondary-light)));
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    
+    /* Professional shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(var(--primary) / 0.1);
+    --shadow-medium: 0 10px 15px -3px hsl(var(--primary) / 0.1);
+    --shadow-large: 0 25px 50px -12px hsl(var(--primary) / 0.15);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.15);
+    
+    /* Smooth transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark mode for medical theme */
+    --background: 215 25% 8%;
+    --foreground: 0 0% 95%;
+    
+    /* Medical blue adjustments for dark mode */
+    --primary: 210 88% 55%;
+    --primary-foreground: 215 25% 8%;
+    --primary-light: 210 88% 65%;
+    --primary-dark: 210 88% 45%;
+    
+    /* Healthcare green for dark mode */
+    --secondary: 142 69% 48%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-light: 142 69% 58%;
+    
+    /* Dark surfaces */
+    --card: 215 25% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 215 25% 12%;
+    --popover-foreground: 0 0% 95%;
+    
+    /* Dark grays */
+    --muted: 215 25% 16%;
+    --muted-foreground: 215 16% 65%;
+    --accent: 215 25% 18%;
+    --accent-foreground: 0 0% 95%;
+    
+    /* Dark borders and inputs */
+    --border: 215 25% 20%;
+    --input: 215 25% 20%;
+    --ring: 210 88% 55%;
+    
+    /* Dark gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Professional medical styling */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight;
+  }
+}
