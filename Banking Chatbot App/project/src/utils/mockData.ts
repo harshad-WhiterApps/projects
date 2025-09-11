@@ -1,0 +1,222 @@
+import { Transaction, User, CreditCard, Loan, Bill, Notification, KYCDocument } from '../types';
+
+export const mockUser: User = {
+  id: '1',
+  name: 'John Doe',
+  email: 'john.doe@email.com',
+  phone: '+91-9876543210',
+  accountNumber: '****1234',
+  balance: 45750.50,
+  isAuthenticated: false,
+  role: 'customer',
+  kycStatus: 'verified',
+  preferredLanguage: 'en',
+  lastLogin: new Date(),
+};
+
+export const mockTransactions: Transaction[] = [
+  {
+    id: '1',
+    type: 'credit',
+    amount: 2500.00,
+    description: 'Salary Credit - TechCorp Inc',
+    date: new Date('2024-01-15'),
+    balance: 45750.50,
+    category: 'salary',
+    status: 'completed',
+    reference: 'TXN001234567',
+  },
+  {
+    id: '2',
+    type: 'debit',
+    amount: 150.00,
+    description: 'ATM Withdrawal - Branch ATM',
+    date: new Date('2024-01-14'),
+    balance: 43250.50,
+    category: 'withdrawal',
+    status: 'completed',
+    reference: 'TXN001234566',
+  },
+  {
+    id: '3',
+    type: 'debit',
+    amount: 1200.00,
+    description: 'EMI Payment - Car Loan',
+    date: new Date('2024-01-13'),
+    balance: 43400.50,
+    category: 'loan',
+    status: 'completed',
+    reference: 'TXN001234565',
+  },
+  {
+    id: '4',
+    type: 'credit',
+    amount: 500.00,
+    description: 'Refund - Online Purchase',
+    date: new Date('2024-01-12'),
+    balance: 44600.50,
+    category: 'refund',
+    status: 'completed',
+    reference: 'TXN001234564',
+  },
+  {
+    id: '5',
+    type: 'debit',
+    amount: 75.00,
+    description: 'UPI Payment - Grocery Store',
+    date: new Date('2024-01-11'),
+    balance: 44100.50,
+    category: 'shopping',
+    status: 'completed',
+    reference: 'TXN001234563',
+  },
+];
+
+export const mockCreditCards: CreditCard[] = [
+  {
+    id: '1',
+    cardNumber: '****1234',
+    cardType: 'visa',
+    creditLimit: 100000,
+    availableLimit: 85000,
+    dueDate: new Date('2024-02-15'),
+    minimumDue: 2500,
+    totalDue: 15000,
+    status: 'active',
+  },
+  {
+    id: '2',
+    cardNumber: '****5678',
+    cardType: 'mastercard',
+    creditLimit: 50000,
+    availableLimit: 45000,
+    dueDate: new Date('2024-02-20'),
+    minimumDue: 1000,
+    totalDue: 5000,
+    status: 'active',
+  },
+];
+
+export const mockLoans: Loan[] = [
+  {
+    id: '1',
+    type: 'car',
+    amount: 500000,
+    remainingAmount: 350000,
+    emiAmount: 12000,
+    nextEmiDate: new Date('2024-02-01'),
+    interestRate: 8.5,
+    tenure: 60,
+    status: 'active',
+  },
+  {
+    id: '2',
+    type: 'personal',
+    amount: 200000,
+    remainingAmount: 150000,
+    emiAmount: 5500,
+    nextEmiDate: new Date('2024-02-05'),
+    interestRate: 12.5,
+    tenure: 36,
+    status: 'active',
+  },
+];
+
+export const mockBills: Bill[] = [
+  {
+    id: '1',
+    type: 'electricity',
+    provider: 'State Electricity Board',
+    accountNumber: 'ELE123456789',
+    amount: 2500,
+    dueDate: new Date('2024-02-10'),
+    status: 'pending',
+  },
+  {
+    id: '2',
+    type: 'mobile',
+    provider: 'Airtel',
+    accountNumber: '9876543210',
+    amount: 599,
+    dueDate: new Date('2024-02-05'),
+    status: 'pending',
+  },
+  {
+    id: '3',
+    type: 'internet',
+    provider: 'Jio Fiber',
+    accountNumber: 'JIO987654321',
+    amount: 999,
+    dueDate: new Date('2024-02-08'),
+    status: 'pending',
+  },
+];
+
+export const mockNotifications: Notification[] = [
+  {
+    id: '1',
+    type: 'transaction',
+    title: 'Transaction Alert',
+    message: 'UPI payment of ₹75 made to Grocery Store',
+    timestamp: new Date('2024-01-11T10:30:00'),
+    read: false,
+    priority: 'medium',
+  },
+  {
+    id: '2',
+    type: 'reminder',
+    title: 'EMI Reminder',
+    message: 'Car loan EMI of ₹12,000 due on Feb 1st',
+    timestamp: new Date('2024-01-10T09:00:00'),
+    read: false,
+    priority: 'high',
+  },
+  {
+    id: '3',
+    type: 'security',
+    title: 'Login Alert',
+    message: 'New login detected from Chrome browser',
+    timestamp: new Date('2024-01-09T14:15:00'),
+    read: true,
+    priority: 'medium',
+  },
+  {
+    id: '4',
+    type: 'offer',
+    title: 'Special Offer',
+    message: 'Get 0% interest on balance transfer for 6 months',
+    timestamp: new Date('2024-01-08T11:00:00'),
+    read: true,
+    priority: 'low',
+  },
+];
+
+export const mockKYCDocuments: KYCDocument[] = [
+  {
+    id: '1',
+    type: 'aadhaar',
+    documentNumber: '****-****-1234',
+    status: 'verified',
+    uploadDate: new Date('2023-12-01'),
+    verificationDate: new Date('2023-12-02'),
+  },
+  {
+    id: '2',
+    type: 'pan',
+    documentNumber: 'ABCDE****F',
+    status: 'verified',
+    uploadDate: new Date('2023-12-01'),
+    verificationDate: new Date('2023-12-02'),
+  },
+];
+
+export const languages = [
+  { code: 'en', name: 'English' },
+  { code: 'hi', name: 'हिंदी' },
+  { code: 'bn', name: 'বাংলা' },
+  { code: 'te', name: 'తెలుగు' },
+  { code: 'mr', name: 'मराठी' },
+  { code: 'ta', name: 'தமிழ்' },
+  { code: 'gu', name: 'ગુજરાતી' },
+  { code: 'kn', name: 'ಕನ್ನಡ' },
+];
